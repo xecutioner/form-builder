@@ -1,0 +1,74 @@
+%script{:src => "javascripts/actions.js", :type => "text/javascript", :charset => "utf-8"}
+%link{"rel" => "stylesheet", "href" => "css/style.css", "type" => "text/css"}
+.row
+  .span12
+    %h3 Private Consent From
+    .image_holder
+      %image{:src=>"http://robot-bucket.s3.amazonaws.com/splitted_images/20120223111818/20120223111818.png"}   
+  .span12
+    .form_holder
+      %form.form-horizontal
+        %fieldset
+          %legend Fill the Information as accurately as possible
+          %span.label{:class => "label-important"} 
+            =  "If you are not able to read any field then please click the cross that appears on the side of the field. "
+          %table{:border => "0"}
+            %tbody
+              %tr
+                %td
+                  .span6
+                    .control-group
+                      %label.control-label Client Name
+                      .controls
+                        %input.input-xlarge{:type => "text", :name => "output[client_name]"}
+                        %i.icon-remove
+                        %p.help-block Fill the client name as you see it in the image.
+                    .control-group
+                      %label.control-label Client DOB
+                      .controls
+                        %input.input-xlarge{:type => "date", :placeholder => "mm/dd/yyyy", :id => "date_of_birth", :name => "output[date_of_birth]"}
+                        %i.icon-remove 
+                        %p.help-block Fill the Client DOB in format mm/dd/yyyy .
+                    .control-group
+                      %label.control-label Confirmation Number
+                      .controls
+                        %input.input-xlarge{:type => "number", :name => "output[sh_confirmation_number]"}
+                        %i.icon-remove 
+                        %p.help-block Fill the SH confirmation Number seen in image.
+                    .control-group
+                      %label.control-label Gov't Issued ID
+                      .controls
+                        %input.input-xlarge{:type => "number", :name => "output[govt_issued_id]"}
+                        %i.icon-remove 
+                        %p.help-block Fill the Gov't Issued ID seen in image.
+                %td  
+                  .span6
+                    .control-group
+                      %label.control-label Company Name
+                      .controls
+                        %input.input-xlarge{:type => "text", :name => "output[company_name]"}
+                        %i.icon-remove
+                        %p.help-block Fill the Company as you see it in the image.
+                    .control-group
+                      %label.control-label Location of Testing
+                      .controls
+                        %input.input-xlarge{:type => "text", :name => "output[location_of_testing]"}
+                        %i.icon-remove 
+                        %p.help-block Fill the Location of testing.
+                    .control-group
+                      %label.control-label Collection Site
+                      .controls
+                        %input.input-xlarge{:type => "text", :name => "output[collection_site]"}
+                        %i.icon-remove 
+                        %p.help-block Fill the collection site seen in image.
+                    .control-group
+                      %label.control-label Date of test
+                      .controls
+                        %input.input-xlarge{:type => "text", :placeholder => "mm/dd/yyyy", :id => "date_of_test", :name => "output[collection_site]"}
+                        %i.icon-remove 
+                        %p.help-block Fill the Date of test seen in image in format mm/dd/yyyy.
+        %div.btn{:class =>"submitter", :type=> "submit"}
+          = "I'm done! "
+          
+           
+      

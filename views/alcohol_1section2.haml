@@ -1,0 +1,48 @@
+%script{:src => "javascripts/alc2.js", :type => "text/javascript", :charset => "utf-8"}
+%link{"rel" => "stylesheet", "href" => "css/alc2.css", "type" => "text/css"}
+.row
+  .span12
+    %h3 Alcohol From
+    .image_holder
+      %image{:src=>"http://robot-bucket.s3.amazonaws.com/splitted_images/20120227143726/20120227143726.png"}   
+  .span12
+    .form_holder
+      %form.form-horizontal
+        %fieldset
+          %legend Fill the Information as accurately as possible
+          %p.help-block * accuracy less than 90% would get rejected.
+          %span.label{:class => "label-important"} 
+            =  "If you are not able to read any field then please click the cross that appears on the side of the field. "
+          %table
+            %tr
+              %td
+                .span6
+                  .control-group
+                    %label.control-label Reason For Test :
+                    .controls
+                      %input.input-xlarge{:type => "text", :name => "output[reason_for_test]"}
+                      %i.icon-remove
+                      %p.help-block Please type the reason for test as you see it in the image.
+              %td
+                .span6
+                  .control-group
+                    %label.control-label Enter the date
+                    .controls
+                      %input.input-xlarge{:type => "text", :name => "output[donor_date]", :id => "date_of_test"}
+                      %i.icon-remove
+                      %p.help-block Please type the date  as you see it in the image above.
+            %tr
+              %td
+                .span6
+                  %p Do you see the signature?
+                  %p.help-block Select yes if you see a signature in the image above
+                  .control-group
+                    %label.control-label yes
+                    .controls
+                      %input.input-xlarge{:type => "radio", :name => "output[donor_signature]", :value => "yes"}
+                  .control-group
+                    %label.control-label No
+                    .controls
+                      %input.input-xlarge{:type => "radio", :name => "output[donor_signature]", :value => "no"}
+        %div.btn{:class =>"submitter", :type=> "submit"}
+          = "I'm done! "         

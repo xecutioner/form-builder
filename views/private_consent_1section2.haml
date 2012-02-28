@@ -1,0 +1,28 @@
+%script{:src => "javascripts/pvt1_2.js", :type => "text/javascript", :charset => "utf-8"}
+%link{"rel" => "stylesheet", "href" => "css/pvt1_2.css", "type" => "text/css"}
+.row
+  .span12
+    %h3 Private Consent Form P1S2
+    .image_holder
+      %image{:src=>"http://robot-bucket.s3.amazonaws.com/splitted_images/20120224115205/20120224115205.png"}   
+  .span12
+    .form_holder
+      %form.form-horizontal
+        %fieldset
+          %legend Fill the Information as accurately as possible
+          %table{:border => "0"}
+            %tbody
+              %tr
+                %td
+                  .span6
+                  .control-group
+                    %label.control-label Cell Phone Number
+                    .controls
+                      .inputs
+                        %input.input-xlarge{:type => "text", :name => "output[cell_phone_number_pt1]"}-
+                        %input.input-xlarge{:type => "text", :name => "output[cell_phone_number_pt2]"}-
+                        %input.input-xlarge{:type => "text", :name => "output[cell_phone_number_pt3]"}
+                        %i.icon-remove 
+                        %p.help-block Try your best to fill the Cell Phone Number seen in image, If you cannot determine the number then please click the cross that appears at the side.
+        %div.btn{:class =>"submitter", :type=> "submit"}
+          = " Done! "

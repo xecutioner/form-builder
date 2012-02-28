@@ -1,0 +1,10 @@
+%head
+  %title Form_builder!
+  %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", :type => "text/javascript", :charset => "utf-8"}
+  %link{"rel" => "stylesheet", "href" => "http://dl.dropbox.com/u/51378598/bootstrap.css", "type" => "text/css"}
+  
+%body
+  .container
+    %h2 Extract the asked information from the image
+    .form_container
+      = yield

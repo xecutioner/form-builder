@@ -1,0 +1,32 @@
+/ %script{:src => "javascripts/alc2.js", :type => "text/javascript", :charset => "utf-8"}
+%link{"rel" => "stylesheet", "href" => "css/alc3.css", "type" => "text/css"}
+.row
+  .span12
+    %h3 Alcohol From
+    .image_holder
+      %image{:src=>"http://robot-bucket.s3.amazonaws.com/splitted_images/20120227143730/20120227143730.png"}   
+  .span12
+    .form_holder
+      %form.form-horizontal
+        %fieldset
+          %legend Fill the Information as accurately as possible
+          %span.label{:class => "label-important"} 
+            =  "If you are not able to read any field then please click the cross that appears on the side of the field. "
+          %p.help-block * Tournament mode, Accuracy less than 90% would get rejected automatically.
+          %table
+            %tr
+              %td
+                .span6
+                  %p Technician
+                  %p.help-block Select whichever is selected in above image.
+                  .control-group
+                    %label.control-label BAT
+                    .controls
+                      %input.input-xlarge{:type => "radio", :name => "output[technician]", :value => "yes"}
+                      %i.icon-remove
+                  .control-group
+                    %label.control-label STT
+                    .controls
+                      %input.input-xlarge{:type => "radio", :name => "output[technician]", :value => "no"}
+                      %i.icon-remove
+                      
