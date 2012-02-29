@@ -5,3 +5,18 @@ img{
 .container{
   text-align:center;
 }
+table.table{
+  padding:10%;
+}
+
+input.input-xlarge[type='text']{
+  height:25px;
+  width: 80%;
+}
+div.span6{
+  padding:1%;
+}
+
+table.table{
+  border:none;
+}

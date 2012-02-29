@@ -1,4 +1,4 @@
-/ %script{:src => "javascripts/alc2.js", :type => "text/javascript", :charset => "utf-8"}
+%script{:src => "javascripts/alc3.js", :type => "text/javascript", :charset => "utf-8"}
 %link{"rel" => "stylesheet", "href" => "css/alc3.css", "type" => "text/css"}
 .row
   .span12
@@ -13,7 +13,7 @@
           %span.label{:class => "label-important"} 
             =  "If you are not able to read any field then please click the cross that appears on the side of the field. "
           %p.help-block * Tournament mode, Accuracy less than 90% would get rejected automatically.
-          %table
+          %table{:border => "0px", :class => "table"}
             %tr
               %td
                 .span6
@@ -23,10 +23,105 @@
                     %label.control-label BAT
                     .controls
                       %input.input-xlarge{:type => "radio", :name => "output[technician]", :value => "yes"}
-                      %i.icon-remove
                   .control-group
                     %label.control-label STT
                     .controls
                       %input.input-xlarge{:type => "radio", :name => "output[technician]", :value => "no"}
+              %td
+                .span6
+                  %p Devise
+                  %p.help-block Select whichever is selected in above image.
+                  .control-group
+                    %label.control-label Saliva
+                    .controls
+                      %input.input-xlarge{:type => "radio", :name => "output[device]", :value => "saliva"}
+                  .control-group
+                    %label.control-label Breath
+                    .controls
+                      %input.input-xlarge{:type => "radio", :name => "output[device]", :value => "breath"}
+            %tr
+              %td
+                .span6
+                  %p 15 Minute Wait 
+                  %p.help-block Select whichever is selected in above image yes/no
+                  .control-group
+                    %label.control-label Yes
+                    .controls
+                      %input.input-xlarge{:type => "radio", :name => "output[fifteen_minute_wait]", :value => "yes"}
+                  .control-group
+                    %label.control-label No
+                    .controls
+                      %input.input-xlarge{:type => "radio", :name => "output[fifteen_minute_wait]", :value => "no"}
+          %span.label{:class => "label-important notice"} 
+            =  "If you don't see this part filled out in the image, Leave it blank ."            
+          %table
+            %tr
+              %td
+                .span6
+                  %p.help-block Enter the test # you see in the above image. 
+                  .control-group
+                    %label.control-label Test #
+                    .controls
+                      %input.input-xlarge{:type => "text", :name => "output[test]"}
                       %i.icon-remove
                       
+              %td
+                .span6
+                  %p.help-block Enter the test devise written in the above image.
+                  .control-group
+                    %label.control-label Testing Devise
+                    .controls
+                      %input.input-xlarge{:type => "text", :name => "output[testing_device]"}
+                      %i.icon-remove
+                      
+            %tr  
+              %td
+                .span6
+                  %p.help-block Enter the devise serial # written in the above image.
+                  .control-group
+                    %label.control-label Devise Serial #
+                    .controls
+                      %input.input-xlarge{:type => "text", :name => "output[device_serial]"}
+                      %i.icon-remove
+                      
+              %td
+                .span6
+                  %p.help-block Enter the Lot # and Exp written in the above image.
+                  .control-group
+                    %label.control-label Lot # and Exp
+                    .controls
+                      %input.input-xlarge{:type => "text", :name => "output[lot_and_expiry]"}
+                      %i.icon-remove
+                      
+            %tr  
+              %td
+                .span6
+                  %p.help-block Enter the Activation Time written in the above image in format HH:MM.
+                  .control-group
+                    %label.control-label Activation Time
+                    .controls
+                      %input.input-xlarge{:type => "text", :name => "output[activation_time]", :placeholder => "HH:MM", :id => "activation_time"}
+                      %i.icon-remove
+                      
+              %td
+                .span6
+                  %p.help-block Enter the Reading Time written in the above image in format HH:MM.
+                  .control-group
+                    %label.control-label Reading Time
+                    .controls
+                      %input.input-xlarge{:type => "text", :name => "output[reading_time]", :placeholder => "HH:MM", :id => "reading_time"}
+                      %i.icon-remove
+                      
+            %tr  
+              %td
+                .span6
+                  %p.help-block Enter the Result as written in the above image.
+                  .control-group
+                    %label.control-label Result
+                    .controls
+                      %input.input-xlarge{:type => "text", :name => "output[result]"}
+                      %i.icon-remove
+                      
+        %div.btn{:class =>"submitter", :type=> "submit"}
+          = "I'm done! "      
+              

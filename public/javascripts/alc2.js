@@ -2,11 +2,34 @@ $(document).ready(function(){
   
   $('.submitter').click(function(event){
      date_of_test = $('#date_of_test');
-     if (checkDate(date_of_test)){
+     text_inputs = $("input[type=text]");
+    
+     if (checkDate(date_of_test) && check_nil(text_inputs)){
        $('form').submit();
      }
    });
 
+   function check_nil(inputs){
+     var errorMsg = "";
+     var field = "";
+     var  radio_check = $('input[name="output[donor_signature]"]:checked').val();
+     inputs.each(function(k,v){
+     if (v['value'] == ""){
+         errorMsg = "Required Field is not filled, If the information in image is not clear or absent then please click the cross icon.";
+         field = v;
+       }
+     });
+     if (radio_check == undefined){
+       errorMsg = "Required Field is not selected.";
+     }
+     if (errorMsg != ""){
+        alert(errorMsg);
+        if (field){field.focus();}
+        return false;
+      }
+      return true;
+   }
+   
   $(".input-xlarge").live('click',function() {
     if($(this).attr('value')=="---" || $(this).attr('value')=="XXX"){$(this).attr('value',"");}
   });

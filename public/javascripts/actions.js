@@ -4,11 +4,28 @@ $(document).ready(function(){
     event.preventDefault();
     client_dob = $('#date_of_birth');
     date_of_test = $('#date_of_test');
-    if ( checkDate(client_dob) && checkDate(date_of_test)){
+    inputs = $('input');
+        
+    if ( checkDate(client_dob) && checkDate(date_of_test) && check_nil(inputs)){
       $('form').submit();
     }
   });
 
+  function check_nil(inputs){
+    var errorMsg = "";
+    inputs.each(function(k,v){
+      if (v['value'] == ""){
+        errorMsg = "Required Field is not filled, If the information in image is not clear or absent then please click the cross icon.";
+      }
+      if (errorMsg != ""){
+        alert(errorMsg);
+        v.focus();
+        return false;
+      }
+      return true;
+    });
+  }
+  
   function checkDate(field){
     var allowBlank = true;
     var minYear = 1950;
@@ -32,7 +49,6 @@ $(document).ready(function(){
     }
   }
   else if(allowBlank) {
-
     if(field.val()!="---"){errorMsg = "Empty date not allowed!";}
   }
   if(errorMsg != "") {
@@ -42,6 +58,8 @@ $(document).ready(function(){
   }
   return true;
 }
+
+
   $(".input-xlarge").live('click',function() {
     if($(this).attr('value')=="---" || $(this).attr('value')=="XXX"){$(this).attr('value',"");}
   });
@@ -56,7 +74,5 @@ $(document).ready(function(){
   $('.icon-remove').live('click',function(){
     $(this).siblings('input').first().attr('value',"---");
   });
-  // $('.unreadable').live('click',function(){
-  //     $(this).siblings('input').first().attr('value',"XXX");
-  //   });
+  
 });

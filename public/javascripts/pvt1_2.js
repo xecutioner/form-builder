@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
   $('.submitter').click(function(event){
-    event.preventDefault();
-      $('form').submit();
+     $('form').submit();
   });
+
 
   $(".input-xlarge").live('click',function() {
     if($(this).attr('value')=="---" || $(this).attr('value')=="XXX"){$(this).attr('value',"");}
