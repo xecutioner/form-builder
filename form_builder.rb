@@ -22,6 +22,14 @@ get '/alcohol_1section3' do
   haml :alcohol_1section3, :format => :html5
 end
 
+get '/alcohol_1section4' do
+  haml :alcohol_1section4, :format => :html5
+end
+
+get '/alcohol_1section5' do
+  haml :alcohol_1section5, :format => :html5
+end
+
 get '/' do
  haml :index, :format => :html5, :layout => :blank
 end

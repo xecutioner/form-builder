@@ -1,0 +1,49 @@
+%script{:src => "javascripts/alc4.js", :type => "text/javascript", :charset => "utf-8"}
+%link{"rel" => "stylesheet", "href" => "css/alc4.css", "type" => "text/css"}
+.row
+  .span12
+    %h3 Alcohol From
+    .image_holder
+      %image{:src=>"http://robot-bucket.s3.amazonaws.com/splitted_images/20120227143733/20120227143733.png"}   
+  .span12
+    .form_holder
+      %form.form-horizontal
+        %fieldset
+          
+          %legend Fill the Information as accurately as possible
+          %span.label{:class => "label-important"} 
+            =  "If you are not able to read any field then please click the cross that appears on the side of the field. "
+          %p.help-block * Tournament mode, Accuracy less than 90% would get rejected automatically.
+          %table
+            %tr
+              %td
+                .span6
+                  %p Do you see the signature?
+                  %p.help-block Select yes if you see a signature in the image above
+                  .control-group
+                    %label.control-label yes
+                    .controls
+                      %input.input-xlarge{:type => "radio", :name => "output[technician_signature]", :value => "yes"}
+                  .control-group
+                    %label.control-label No
+                    .controls
+                      %input.input-xlarge{:type => "radio", :name => "output[technician_signature]", :value => "no"}
+              %td
+                .span6
+                  .control-group
+                  %label.control-label Technician Name:
+                  .controls
+                    %input.input-xlarge{:type => "text", :name => "output[technician_name]"}
+                    %i.icon-remove
+                    %p.help-block Fill the technician name as you see it in the image.
+            %tr
+              %td
+                .span6
+                  .control-group
+                  %label.control-label Date:
+                  .controls
+                    %input.input-xlarge{:type => "text", :name => "output[technician_date]", :placeholder => "mm/dd/yyyy"}
+                    %i.icon-remove
+                    %p.help-block Fill the date as you see it in the image in format mm/dd/yyyy.
+        %div.btn{:class =>"submitter", :type=> "submit"}
+          = "I'm done! "            

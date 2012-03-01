@@ -1,0 +1,11 @@
+img{
+  border:1px solid grey;
+  margin:1% 0% 1% 0%;
+}
+.container{
+  text-align:center;
+}
+input.input-xlarge[type='text']{
+  height:25px;
+/*  width: 80%;*/
+}
